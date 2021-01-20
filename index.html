@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Documentation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Nav -->
+    <nav id="navbar">
+        <header>jQuery Documentation</header>
+        <ul>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#What_you_should_already_know" class="nav-link">What you should already know</a></li>
+            <li><a href="#Why_jquery" class="nav-link">Why jQuery</a></li>
+            <li><a href="#Get_started" class="nav-link">Get Started</a></li>
+            <li><a href="#Syntax" class="nav-link">Syntax</a></li>
+            <li><a href="#Selectors" class="nav-link">Selectors</a></li>
+            <li><a href="#Events" class="nav-link">Events</a></li>
+            <li><a href="#Reference" class="nav-link">Reference</a></li>
+        </ul>
+    </nav>
+    <!-- Nav End -->
+    <!-- Main -->
+    <main id="main-doc">
+        <!-- Introduction Section -->
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <img src="img/jquery-logo.png" alt="Jquery Logo">
+                <p>jQuery is a lightweight, "write less, do more", JavaScript library.</p>
+                <p>The purpose of jQuery is to make it much easier to use JavaScript on your website.</p>
+                <p>jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.</p>
+                <p>jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.</p>
+                <p>The jQuery library contains the following features:</p>
+                <ul>
+                    <li>HTML/DOM manipulation</li>
+                    <li>CSS manipulation</li>
+                    <li>HTML event methods</li>
+                    <li>Effects and animations</li>
+                    <li>AJAX</li>
+                    <li>Utilities</li>
+                </ul>
+                <p><strong>Tip:</strong> In addition, jQuery has plugins for almost any task out there.</p>
+            </article>
+        </section>
+        <!-- Introduction Section End -->
+        <!-- What you should already know Section -->
+        <section class="main-section" id="What_you_should_already_know">
+            <header>What you should already know</header>
+            <article>
+                <p>Before you start using jQuery, you should have a basic knowledge of:</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </article>
+        </section>
+        <!-- What you should already know Section End -->
+        <!-- Why jQuery Section -->
+        <section class="main-section" id="Why_jquery">
+            <header>Why jQuery</header>
+            <article>
+                <p>There are lots of other JavaScript libraries out there, but jQuery is probably the most popular, and also the most extendable.</p>
+                <p>Many of the biggest companies on the Web use jQuery, such as:</p>
+                <ul>
+                    <li>Google</li>
+                    <li>Microsoft</li>
+                    <li>IBM</li>
+                    <li>Netflix</li>
+                </ul>
+            </article>
+        </section>
+        <!-- Why jQuery Section End -->
+        <!-- Get Started Section -->
+        <section class="main-section" id="Get_started">
+            <header>Get Started</header>
+            <article>
+                <h1>Adding jQuery to Your Web Pages</h1>
+                <p>There are several ways to start using jQuery on your web site. You can:</p>
+                <ul>
+                    <li>Download the jQuery library from jQuery.com</li>
+                    <li>Include jQuery from a CDN, like Google</li>
+                </ul>
+                <h1>Downloading jQuery</h1>
+                <p>There are two versions of jQuery available for downloading: </p>
+                <ul>
+                    <li>Production version <br> This is for your live website because it has been minified and compressed</li>
+                    <li>Development version <br> This is for testing and development (uncompressed and readable code)</li>
+                </ul>
+                <p>Both versions can be downloaded from jQuery.com.</p>
+                <p>The jQuery library is a single JavaScript file, and you reference it with the HTML <span class="red background">&lt;script&gt;</span> tag (notice that the <span class="red background">&lt;script&gt;</span> tag should be inside the <span class="red background">&lt;head&gt;</span> section):</p>
+                <code>&lt;head&gt;
+                    &#8195 &lt;script src=&quot;jquery-3.3.1.min.js&quot;&gt;&lt;/script&gt;
+                    &lt;/head&gt;</code>
+                <p><strong>Tip:</strong> Place the downloaded file in the same directory as the pages where you wish to use it.</p>
+                <h1>jQuery CDN</h1>
+                <p>If you don't want to download and host jQuery yourself, you can include it from a CDN (Content Delivery Network).</p>
+                <p>Google is an example of someone who host jQuery (Google CDN):</p>
+                <code>&lt;head&gt;
+                    &#8195 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+                    &lt;/head&gt;</code>
+            </article>
+        </section>
+        <!-- Get Started Section End -->
+        <!-- Syntax Section -->
+        <section class="main-section" id="Syntax">
+            <header>Syntax</header>
+            <article>
+                <p>With jQuery you select (query) HTML elements and perform "actions" on them.</p>
+                <h1>jQuery Syntax</h1>
+                <p>The jQuery syntax is tailor-made for <strong>selecting</strong> HTML elements and performing some <strong>action</strong> on the element(s).</p>
+                <p>Basic syntax is: <strong>$(selector).action()</strong></p>
+                <ul>
+                    <li>A $ sign to define/access jQuery</li>
+                    <li>A (selector) to "query (or find)" HTML elements</li>
+                    <li>A jQuery action() to be performed on the element(s)</li>
+                </ul>
+                <h1>The Document Ready Event</h1>
+                <p>You might have noticed that all jQuery methods in our examples, are inside a document ready event:</p>
+                <code>$(document).ready(function(){
+                    &#8195 // jQuery methods go here...
+                    }); </code>
+                <p>This is to prevent any jQuery code from running before the document is finished loading (is ready).</p>
+                <p>It is good practice to wait for the document to be fully loaded and ready before working with it. This also allows you to have your JavaScript code before the body of your document, in the head section.</p>
+                <p>Here are some examples of actions that can fail if methods are run before the document is fully loaded:</p>
+                <ul>
+                    <li>Trying to hide an element that is not created yet</li>
+                    <li>Trying to get the size of an image that is not loaded yet</li>
+                </ul>
+                <p><strong>Tip:</strong> The jQuery team has also created an even shorter method for the document ready event:</p>
+                <code>$(function(){
+                    &#8195 // jQuery methods go here...
+                    }); </code>
+                <p>Use the syntax you prefer. We think that the document ready event is easier to understand when reading the code.</p>
+            </article>
+        </section>
+        <!-- Syntax End Section -->
+        <!-- Selectors Section -->
+        <section class="main-section" id="Selectors">
+            <header>Selectors</header>
+            <article>
+                <p>jQuery selectors are one of the most important parts of the jQuery library.</p>
+                <h1>jQuery Selectors</h1>
+                <p>jQuery selectors allow you to select and manipulate HTML element(s).</p>
+                <p>jQuery selectors are used to "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more. It's based on the existing CSS Selectors, and in addition, it has some own custom selectors.</p>
+                <p>All selectors in jQuery start with the dollar sign and parentheses: $().</p>
+                <h1>The element Selector</h1>
+                <p>The jQuery element selector selects elements based on the element name.</p>
+                <p>You can select all <span class="red background">&lt;p&gt;</span> elements on a page like this:</p>
+                <code>$("p") </code>
+                <h1>The #id Selector</h1>
+                <p>The jQuery <span class="red background">#id</span> selector uses the id attribute of an HTML tag to find the specific element.</p>
+                <p>An id should be unique within a page, so you should use the #id selector when you want to find a single, unique element.</p>
+                <p>To find an element with a specific id, write a hash character, followed by the id of the HTML element:</p>
+                <code>$("#test")</code>
+                <h1>The .class Selector</h1>
+                <p>The jQuery <span class="red background">.class</span> selector finds elements with a specific class.</p>
+                <p>To find elements with a specific class, write a period character, followed by the name of the class:</p>
+                <code>$(".test") </code>
+            </article>
+        </section>
+        <!-- Selectors Section End -->
+        <!-- Events Section -->
+        <section class="main-section" id="Events">
+            <header>Events</header>
+            <article>
+                <p>jQuery is tailor-made to respond to events in an HTML page.</p>
+                <h1>What are Events?</h1>
+                <p>All the different visitors' actions that a web page can respond to are called events.</p>
+                <p>An event represents the precise moment when something happens.</p>
+                <p>Examples :</p>
+                <ul>
+                    <li>moving a mouse over an element</li>
+                    <li>selecting a radio button</li>
+                    <li>clicking on an element</li>
+                </ul>
+                <p>The term "<strong>fires/fired</strong>" is often used with events. <br>Example: "The keypress event is fired, the moment you press a key".</p>
+                <h1>jQuery Syntax For Event Methods</h1>
+                <p>In jQuery, most DOM events have an equivalent jQuery method.</p>
+                <p>To assign a click event to all paragraphs on a page, you can do this: </p>
+                <code>$("p").click();</code>
+                <p>The next step is to define what should happen when the event fires. You must pass a function to the event:</p>
+                <code>$("p").click(function(){
+                    &#8195 // action goes here!!
+                    });</code>
+            </article>
+        </section>
+        <!-- Events Section Ends -->
+        <!-- Reference Section -->
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <p>This section contains a complete jQuery reference documentation.</p>
+                <h1>jQuery Reference</h1>
+                <p>The jQuery reference contains a list of all jQuery selectors, methods, properties and events, along with examples.</p>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp" class="button button2">Selectors</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_events.asp" class="button button2">Events</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp" class="button button2">Effects</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_html.asp" class="button button2">HTML/CSS</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_traversing.asp" class="button button2">Traversing</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_ajax.asp" class="button button2">Ajax</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_misc.asp" class="button button2">Misc</a>
+                <a href="https://www.w3schools.com/jquery/jquery_ref_prop.asp" class="button button2">Properties</a>
+                <h1>Site Reference</h1>
+                <p>* All the documentation in this page is taken from <a href="https://www.w3schools.com/jquery/jquery_ref_overview.asp">w3schools.com</a></p>
+                <hr>
+                <p class="center">This page was built by <a href="https://github.com/fadjriaf">fadjriaf</a> as a code project learning at <a href="https://www.freecodecamp.org/">freecodecamp.org</a></p>
+            </article>
+        </section>
+        <!-- Reference Section End -->
+    </main>
+    <!-- Main End -->
+</body>
+
+</html>
